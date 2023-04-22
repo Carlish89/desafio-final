@@ -5,18 +5,15 @@ import { useContext } from 'react'
 import Cardb from '../components/Cardb'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     function capitalizarPrimeraLetra(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
     const { pizza } = useContext(Context)
-    const navigate = useNavigate()
-    const [id,setID] = useState("")
-    const irAPizza = () => {
-        navigate(`/Pizza/${id}`)
-    }
+ 
     console.log(pizza)
     return (
         <div>
@@ -33,6 +30,10 @@ const Home = () => {
                             fill={pizza.ingredients.map(ingredientes =>
                                 <ul className='m-0'>🍕{ingredientes}</ul>)}
                             price={pizza.price}
+                            boton1 ={<Link to={`pizza/${pizza.id}`}>
+                            <Button  variant="primary" className='mx-2 bg-info border border-0'>Ver más 👀</Button>
+                            </Link>}
+                            boton2={<Button variant="primary" className='mx-2 bg-danger border border-0'>Añadir 🛒</Button>}
                         /></div>
                 )}
             </div>

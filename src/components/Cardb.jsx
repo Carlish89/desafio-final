@@ -5,10 +5,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useContext } from 'react'
 import { Context } from '../Context'
-import NavLink from 'react-bootstrap'
 
-const Cardb = ({ image, name, fill, price }) => {
+
+const Cardb = ({ image, name, fill, price, boton1, boton2 }) => {
     const { pizza } = useContext(Context)
+    
+    
 
 
 
@@ -27,10 +29,8 @@ const Cardb = ({ image, name, fill, price }) => {
                         <h3><b>${price}</b></h3>
                     </Card.Text>
                     <div className='d-flex mx-1'>
-                        <Link to={`pizza/${pizza.id}`}>
-                            <Button variant="primary" className='mx-2 bg-info border border-0'>Ver más 👀</Button>
-                        </Link>
-                        <Button variant="primary" className='mx-2 bg-danger border border-0'>Añadir 🛒</Button>
+                      {boton1}
+                      {boton2}
                     </div>
                 </Card.Body>
             </Card>
@@ -39,3 +39,4 @@ const Cardb = ({ image, name, fill, price }) => {
 }
 
 export default Cardb
+
