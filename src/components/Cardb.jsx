@@ -1,21 +1,19 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useContext } from 'react'
 import { Context } from '../Context'
+import NavLink from 'react-bootstrap'
 
 const Cardb = ({ image, name, fill, price }) => {
-    const {pizza} = useContext(Context)
-    const navigate = useNavigate()
-    const [id,setID] = useState("")
-    const irAPizza = () => {
-        navigate(`/Pizza/${id}`)
-    }
-   
-    
-    
+    const { pizza } = useContext(Context)
+
+
+
+
+
     return (
         <div >
             <Card style={{ width: '18rem' }}>
@@ -29,8 +27,10 @@ const Cardb = ({ image, name, fill, price }) => {
                         <h3><b>${price}</b></h3>
                     </Card.Text>
                     <div className='d-flex mx-1'>
-                    <Button onClick={(e) => console.log(e.currentTarget.attributes)}  variant="primary" className='mx-2 bg-info border border-0'>Ver más 👀</Button>
-                    <Button variant="primary" className='mx-2 bg-danger border border-0'>Añadir 🛒</Button>
+                        <Link to={`pizza/${pizza.id}`}>
+                            <Button variant="primary" className='mx-2 bg-info border border-0'>Ver más 👀</Button>
+                        </Link>
+                        <Button variant="primary" className='mx-2 bg-danger border border-0'>Añadir 🛒</Button>
                     </div>
                 </Card.Body>
             </Card>

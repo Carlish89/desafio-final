@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./views/home";
 import Navbar from "./components/Navbar";
 import { Provider } from "./Context";
+import Pizza from "./views/Pizza";
 function App() {
  
   return (
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/pizza/:id" element={<Pizza />} />
         </Routes>
       </BrowserRouter>
       </Provider>
