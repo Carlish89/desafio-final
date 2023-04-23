@@ -56,3 +56,15 @@ ul{
 .ing{
   text-align: justify;
 }
+.pizzaDesc{
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+}
+#uldesc{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  
+}

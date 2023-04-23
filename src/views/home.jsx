@@ -5,11 +5,12 @@ import { useContext } from 'react'
 import Cardb from '../components/Cardb'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+export function capitalizarPrimeraLetra(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 const Home = () => {
-    function capitalizarPrimeraLetra(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
+   
     const { pizza } = useContext(Context)
  
     console.log(pizza)
