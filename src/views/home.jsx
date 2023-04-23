@@ -3,8 +3,6 @@ import Pizza from '../components/pizza-2589577.jpg'
 import { Context } from '../Context'
 import { useContext } from 'react'
 import Cardb from '../components/Cardb'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 

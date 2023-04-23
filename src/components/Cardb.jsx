@@ -1,21 +1,10 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
-import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import { useContext } from 'react'
-import { Context } from '../Context'
+
 
 
 const Cardb = ({ image, name, fill, price, boton1, boton2 }) => {
-    const { pizza } = useContext(Context)
-    
-    
-
-
-
-
-
+ 
     return (
         <div >
             <Card style={{ width: '18rem' }}>

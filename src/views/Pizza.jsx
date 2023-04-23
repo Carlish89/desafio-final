@@ -5,12 +5,16 @@ import { useParams } from 'react-router-dom'
 
 
 const Pizza = () => {
-  const {id} = useParams()
-const {pizza} = useContext(Context)
+  const params = useParams() 
+  const { pizza  } = useContext(Context)
+  const getPizzaById = (id) => pizza.find((pizza) => pizza.id === id)
+  const newPizza = getPizzaById(params.id)
+ 
+  
 
   return (
     <div>
-      {id}
+     hola soy {newPizza.name}
     </div>
   )
 }
