@@ -9,16 +9,21 @@ export function capitalizarPrimeraLetra(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-const Home = () => {
-   
+const Home = () => {   
+    
     const { pizza } = useContext(Context)
- 
-    console.log(pizza)
+    const value = useContext(Context)
+    const añadirProducto = value.añadirProducto
+    const sumaAc = value.sumaAc
+    const setPrecioAc = value.setPrecioAc
+    const precioAc = value.precioAc
+    console.log(precioAc)
+
     return (
         <div>
             <div className='image' style={{ backgroundImage: `url('${Pizza}')` }}>
                 <h1 className='titulo'>Pizzeria Mamma Mia!</h1>
-                <p className='border-bottom '>¡Tenemos las mejores Pizzas que podras encontrar!</p>
+                <p className='border-bottom '>¡Tenemos las mejores Pizzas que podras encontrar!</p> 
             </div>
             <div className='galeria  p-3'>
                 {pizza.map(pizza =>
@@ -32,12 +37,11 @@ const Home = () => {
                             boton1 ={<Link to={`pizza/${pizza.id}`}>
                             <Button  variant="primary" className='mx-2 bg-info border border-0'>Ver más 👀</Button>
                             </Link>}
-                            boton2={<Button variant="primary" className='mx-2 bg-danger border border-0'>Añadir 🛒</Button>}
+                            boton2={<Button onClick={() => {añadirProducto(pizza.id); setPrecioAc( sumaAc(pizza.id)) }} variant="primary" className='mx-2 bg-danger border border-0'>Añadir 🛒</Button>}
                         /></div>
                 )}
             </div>
         </div>
     )
 }
-
 export default Home
