@@ -1,10 +1,7 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 
-
-
-const Cardb = ({ image, name, fill, price, boton1, boton2 }) => {
- 
+const Cardb = ({ image, name, fill, price, boton1, boton2 }) => { 
     return (
         <div >
             <Card style={{ width: '18rem' }}>
@@ -26,6 +23,5 @@ const Cardb = ({ image, name, fill, price, boton1, boton2 }) => {
         </div>
     )
 }
-
 export default Cardb
 
