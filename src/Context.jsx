@@ -20,7 +20,8 @@ export function Provider({ children }) {
         const pizzaFilt = pizza.filter(pizza => pizza.id === id)
         carrito.push(pizzaFilt)
         const newCarrito = [...carrito]
-        setCarrito(newCarrito)
+        const bestCarrito = newCarrito.flat()
+        setCarrito(bestCarrito)
         console.log(carrito)     
     }
     const sumaAc = (id) =>{
@@ -37,7 +38,8 @@ export function Provider({ children }) {
         pizza,
         setPizza,
         añadirProducto: añadirProducto,
-        carrito: [carrito, setCarrito],
+        carrito,
+        setCarrito,
         sumaAc:sumaAc,
        precioAc:precioAc,
        setPrecioAc:setPrecioAc

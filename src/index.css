@@ -58,6 +58,7 @@ ul{
 }
 .pizzaDesc{
   display: flex;
+  flex-direction: row;
   justify-content: center;
   padding: 5rem;
 }
@@ -65,6 +66,32 @@ ul{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: center;  
+}
+.carrito-card{
+  display: flex;
+  height: 100px;
+  width: 50vw;
+  justify-content: space-between;
+  text-align: start;
+  padding: 3rem;
   
+}
+.carrito-img{
+height: 50px;
+width: 50px;
+}
+.carrito-cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.carrito-b1{
+  display: flex;
+  gap: 1rem;
+}
+.cont{
+  padding: 5rem;  
+  background-color: #F8F9FA;
 }
