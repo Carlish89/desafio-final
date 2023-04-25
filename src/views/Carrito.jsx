@@ -10,6 +10,10 @@ const Carrito = () => {
   const { setCarrito } = useContext(Context)
   const value = useContext(Context)
   const precioAc = value.precioAc
+  const setPrecioAc = value.setPrecioAc
+  const añadirProducto = value.añadirProducto
+  const eliminarProducto = value.eliminarProducto
+  const sumaAc = value.sumaAc
   const newCarrito = carrito.sort(function (a, b) {
     if (a.id > b.id) {
       return 1;
@@ -54,7 +58,7 @@ const Carrito = () => {
               <img className='carrito-img' src={pizza.img} alt="" />{"  "}<b>{capitalizarPrimeraLetra(pizza.name)}</b>
             </div>
             <div className='carrito-b2'>
-              <b className='text-success'>${pizza.result}</b> {"   "}<Button  variant="primary" className='mx-2 bg-info border border-0'>+</Button><b>{pizza.count}</b><Button  variant="primary" className='mx-2 bg-danger border border-0'>-</Button>
+              <b className='text-success'>${pizza.result}</b> {"   "}<Button onClick={() => {añadirProducto(pizza.id); setPrecioAc( sumaAc(pizza.id)) }} variant="primary" className='mx-2 bg-info border border-0'>+</Button><b>{pizza.count}</b><Button onClick={() => {eliminarProducto(pizza.id)}} variant="primary" className='mx-2 bg-danger border border-0'>-</Button>
             </div>
           </div>
         )}

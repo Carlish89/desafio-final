@@ -34,6 +34,17 @@ export function Provider({ children }) {
         const result = arrayPrecios.reduce((a, b) => a + b)       
         return result
     }
+    const eliminarProducto = (id) => {
+        const index = carrito.findIndex(pizza => pizza.id === id)
+        const price = carrito[index].price
+        const indexp = arrayPrecios.findIndex(element => element === price) 
+        carrito.splice(index,1)
+        arrayPrecios.splice(indexp,1)        
+        const betterList = carrito.flat()
+        setPrecioAc(precioAc-price)
+        setCarrito(betterList)       
+        console.log(carrito)        
+    }
     const globalState = {
         pizza,
         setPizza,
@@ -42,7 +53,8 @@ export function Provider({ children }) {
         setCarrito,
         sumaAc:sumaAc,
        precioAc:precioAc,
-       setPrecioAc:setPrecioAc
+       setPrecioAc:setPrecioAc,
+       eliminarProducto:eliminarProducto
     }
     return <Context.Provider value={globalState}> {children} </Context.Provider>
 }
