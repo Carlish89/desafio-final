@@ -73,6 +73,7 @@ ul{
   height: 100px;
   width: 50vw;
   justify-content: space-between;
+  align-items: center;
   text-align: start;
   padding: 3rem;
   
@@ -90,6 +91,7 @@ width: 50px;
 .carrito-b1{
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 .cont{
   padding: 5rem;  
