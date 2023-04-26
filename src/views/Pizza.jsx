@@ -2,7 +2,6 @@ import React from 'react'
 import { Context } from '../Context'
 import { useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { capitalizarPrimeraLetra } from './home'
 
@@ -18,20 +17,25 @@ const Pizza = () => {
 
   return (
     <div className='pizzaDesc'>
-      <Card style={{ width: '50rem' }}>
-        <Card.Img variant="top" src={newPizza.img} />
-        <Card.Body>
-          <Card.Title><h1 className='p-2'>{capitalizarPrimeraLetra(newPizza.name)}</h1></Card.Title>
-          <Card.Text className='p-2'>
-            <h4 className='p-2'>Precio{"  "}:{"  "}${newPizza.price}</h4>
-            <b>{newPizza.desc}</b>
-            <b><p className='p-2'>Ingredientes:</p></b>
-            {newPizza.ingredients.map(ingredientes =>
-              <ul className='m-0 p-2 text-center' >🍕{ingredientes}</ul>)}
-          </Card.Text>
-          <Button onClick={() => {añadirProducto(newPizza.id); setPrecioAc( sumaAc(newPizza.id)) }} variant="primary" className="btn-danger">Añadir🛒</Button>
-        </Card.Body>
-      </Card>
+      <div className='desc-img' style={{ backgroundImage: `url(${newPizza.img})` }}>
+      </div>
+      <div className='desc-body'>
+        <div className='desc-title'>
+          <h3><b>{capitalizarPrimeraLetra(newPizza.name)}</b></h3>
+        </div>
+        <div className='desc-pdesc'>
+          <p>{newPizza.desc}</p>
+        </div>
+        <div className='desc-ingredients'>
+          <p><b>ingredientes:</b></p>
+          {newPizza.ingredients.map(ingredients =>
+              <ul className='m-0 p-2 text-center' >🍕{ingredients}</ul>)}
+        </div>
+        <div className='desc-price'>
+            <h3><b>Precio:{'  '}${newPizza.price}</b></h3>
+            <Button onClick={() => {añadirProducto(newPizza.id); setPrecioAc( sumaAc(newPizza.id)) }} variant="primary" className="btn-danger">Añadir🛒</Button>
+        </div>
+      </div>
     </div>
   )
 }
