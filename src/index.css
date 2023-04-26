@@ -59,22 +59,24 @@ ul{
 
 .carrito-card{
   display: flex;
-  height: 100px;
+  height: 70px;
   width: 50vw;
   justify-content: space-between;
   align-items: center;
   text-align: start;
-  padding: 3rem;
+  padding: 1rem;
   
 }
 .carrito-img{
-height: 50px;
-width: 50px;
+height: 35px;
+width: 35px;
 }
 .carrito-cont{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 90vh;
  
 }
 .carrito-b1{
@@ -83,8 +85,9 @@ width: 50px;
   align-items: center;
 }
 .cont{
-  padding: 5rem;  
+  padding: 1rem;  
   background-color: #F8F9FA;
+  
 }
 .pizzaDesc{
   display: flex;

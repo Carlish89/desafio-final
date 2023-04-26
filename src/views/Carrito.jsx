@@ -49,7 +49,7 @@ const Carrito = () => {
   console.log(pizzaList)
   setCarrito(newCarrito)
   return (
-    <div className='carrito-cont' style={{ height: "100vh" }}>
+    <div className='carrito-cont'>
       <div className='cont'>
         <h3><b>Detalle del pedido:</b></h3>
         {pizzaList.map((pizza) =>
