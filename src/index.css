@@ -128,5 +128,6 @@ width: 35px;
 .desc-price{
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  align-items: flex-end;
+  margin-top: 72px;
 }
